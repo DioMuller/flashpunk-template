@@ -1,5 +1,6 @@
-package com.diogomuller.test 
+package test 
 {
+	import fplib.base.GameEntity;
 	import net.flashpunk.World;
 	
 	/**
@@ -9,8 +10,9 @@ package com.diogomuller.test
 	public class TestWorld extends World
 	{
 		public function TestWorld() 
-		{
-			add(new TestEntity());
+		{			
+			add(new Player());
+			add(new Enemy());
 		}
 	}
 

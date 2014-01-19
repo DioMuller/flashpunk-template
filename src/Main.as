@@ -1,6 +1,6 @@
 package
 {
-	import com.diogomuller.test.TestWorld;
+	import test.TestWorld;
 	import net.flashpunk.Engine;
 	import net.flashpunk.FP;
 	
