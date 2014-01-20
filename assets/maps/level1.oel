@@ -1,0 +1,168 @@
+<level width="640" height="480">
+  <Collision exportMode="Bitstring">00000000000000000001
+00000000000000000001
+00000000000000000001
+00000000000000000001
+10000000000000000001
+10000000000000000001
+10000000000000011111
+10000000000000000111
+10000000000001000111
+10000000011000000111
+10000000011000000111
+10000000111100000111
+11111111111111111111
+11111111111111111111
+11111111111111111111</Collision>
+  <MainLayer tileset="NewTileset0" exportMode="XML">
+    <tile x="0" y="4" id="32" />
+    <tile x="0" y="5" id="1" />
+    <tile x="0" y="6" id="1" />
+    <tile x="0" y="7" id="1" />
+    <tile x="0" y="8" id="1" />
+    <tile x="0" y="9" id="1" />
+    <tile x="0" y="10" id="1" />
+    <tile x="0" y="11" id="1" />
+    <tile x="0" y="12" id="1" />
+    <tile x="0" y="13" id="1" />
+    <tile x="0" y="14" id="1" />
+    <tile x="1" y="4" id="29" />
+    <tile x="1" y="5" id="29" />
+    <tile x="1" y="6" id="29" />
+    <tile x="1" y="7" id="29" />
+    <tile x="1" y="8" id="29" />
+    <tile x="1" y="9" id="29" />
+    <tile x="1" y="10" id="29" />
+    <tile x="1" y="11" id="29" />
+    <tile x="1" y="12" id="26" />
+    <tile x="1" y="13" id="1" />
+    <tile x="1" y="14" id="1" />
+    <tile x="2" y="12" id="19" />
+    <tile x="2" y="13" id="1" />
+    <tile x="2" y="14" id="1" />
+    <tile x="3" y="12" id="17" />
+    <tile x="3" y="13" id="1" />
+    <tile x="3" y="14" id="1" />
+    <tile x="4" y="12" id="10" />
+    <tile x="4" y="13" id="1" />
+    <tile x="4" y="14" id="1" />
+    <tile x="5" y="12" id="10" />
+    <tile x="5" y="13" id="1" />
+    <tile x="5" y="14" id="1" />
+    <tile x="6" y="12" id="35" />
+    <tile x="6" y="13" id="1" />
+    <tile x="6" y="14" id="1" />
+    <tile x="7" y="11" id="27" />
+    <tile x="7" y="12" id="30" />
+    <tile x="7" y="13" id="1" />
+    <tile x="7" y="14" id="1" />
+    <tile x="8" y="9" id="27" />
+    <tile x="8" y="10" id="27" />
+    <tile x="8" y="11" id="30" />
+    <tile x="8" y="12" id="1" />
+    <tile x="8" y="13" id="1" />
+    <tile x="8" y="14" id="1" />
+    <tile x="9" y="9" id="28" />
+    <tile x="9" y="10" id="1" />
+    <tile x="9" y="11" id="1" />
+    <tile x="9" y="12" id="1" />
+    <tile x="9" y="13" id="1" />
+    <tile x="9" y="14" id="1" />
+    <tile x="10" y="9" id="28" />
+    <tile x="10" y="10" id="1" />
+    <tile x="10" y="11" id="1" />
+    <tile x="10" y="12" id="1" />
+    <tile x="10" y="13" id="1" />
+    <tile x="10" y="14" id="1" />
+    <tile x="11" y="9" id="29" />
+    <tile x="11" y="10" id="29" />
+    <tile x="11" y="11" id="32" />
+    <tile x="11" y="12" id="1" />
+    <tile x="11" y="13" id="1" />
+    <tile x="11" y="14" id="1" />
+    <tile x="12" y="8" id="27" />
+    <tile x="12" y="11" id="29" />
+    <tile x="12" y="12" id="28" />
+    <tile x="12" y="13" id="1" />
+    <tile x="12" y="14" id="1" />
+    <tile x="13" y="8" id="28" />
+    <tile x="13" y="12" id="31" />
+    <tile x="13" y="13" id="1" />
+    <tile x="13" y="14" id="1" />
+    <tile x="14" y="6" id="27" />
+    <tile x="14" y="8" id="29" />
+    <tile x="14" y="12" id="28" />
+    <tile x="14" y="13" id="1" />
+    <tile x="14" y="14" id="1" />
+    <tile x="15" y="6" id="28" />
+    <tile x="15" y="12" id="28" />
+    <tile x="15" y="13" id="1" />
+    <tile x="15" y="14" id="1" />
+    <tile x="16" y="6" id="26" />
+    <tile x="16" y="7" id="27" />
+    <tile x="16" y="8" id="27" />
+    <tile x="16" y="9" id="27" />
+    <tile x="16" y="10" id="27" />
+    <tile x="16" y="11" id="27" />
+    <tile x="16" y="12" id="30" />
+    <tile x="16" y="13" id="1" />
+    <tile x="16" y="14" id="1" />
+    <tile x="17" y="6" id="25" />
+    <tile x="17" y="7" id="1" />
+    <tile x="17" y="8" id="1" />
+    <tile x="17" y="9" id="1" />
+    <tile x="17" y="10" id="1" />
+    <tile x="17" y="11" id="1" />
+    <tile x="17" y="12" id="1" />
+    <tile x="17" y="13" id="1" />
+    <tile x="17" y="14" id="1" />
+    <tile x="18" y="0" id="27" />
+    <tile x="18" y="1" id="27" />
+    <tile x="18" y="2" id="27" />
+    <tile x="18" y="3" id="27" />
+    <tile x="18" y="4" id="27" />
+    <tile x="18" y="5" id="27" />
+    <tile x="18" y="6" id="30" />
+    <tile x="18" y="7" id="1" />
+    <tile x="18" y="8" id="1" />
+    <tile x="18" y="9" id="1" />
+    <tile x="18" y="10" id="1" />
+    <tile x="18" y="11" id="1" />
+    <tile x="18" y="12" id="1" />
+    <tile x="18" y="13" id="1" />
+    <tile x="18" y="14" id="1" />
+    <tile x="19" y="0" id="1" />
+    <tile x="19" y="1" id="1" />
+    <tile x="19" y="2" id="1" />
+    <tile x="19" y="3" id="1" />
+    <tile x="19" y="4" id="1" />
+    <tile x="19" y="5" id="1" />
+    <tile x="19" y="6" id="1" />
+    <tile x="19" y="7" id="1" />
+    <tile x="19" y="8" id="1" />
+    <tile x="19" y="9" id="1" />
+    <tile x="19" y="10" id="1" />
+    <tile x="19" y="11" id="1" />
+    <tile x="19" y="12" id="1" />
+    <tile x="19" y="13" id="1" />
+    <tile x="19" y="14" id="1" />
+  </MainLayer>
+  <SecondaryLayer tileset="NewTileset0" exportMode="XML" />
+  <Entities>
+    <Player id="0" x="80" y="352" />
+    <Enemy id="1" x="304" y="256" />
+    <Path id="3" x="112" y="144">
+      <node x="192" y="96" />
+      <node x="320" y="80" />
+      <node x="400" y="128" />
+      <node x="368" y="176" />
+      <node x="192" y="192" />
+      <node x="144" y="240" />
+      <node x="112" y="144" />
+    </Path>
+    <OneWayPlatform id="4" x="32" y="320" />
+    <OneWayPlatform id="5" x="32" y="240" />
+    <OneWayPlatform id="6" x="512" y="304" />
+    <Trigger id="7" x="480" y="144" width="32" height="48" tipo="Tipo2" />
+  </Entities>
+</level>

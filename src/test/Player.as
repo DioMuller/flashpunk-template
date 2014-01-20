@@ -12,11 +12,8 @@ package test
 	 */
 	public class Player extends GameEntity
 	{
-		[Embed(source="../../assets/swordguy.png")] private const PLAYER : Class;
-		[Embed(source="../../assets/Shoot.mp3")] private const SHOOT:Class;
-		
-		public var shoot:Sfx = new Sfx(SHOOT);
-		public var playerSprite:Spritemap = new Spritemap(PLAYER, 48, 32);
+		public var shoot:Sfx = new Sfx(Assets.SE_SHOOT);
+		public var playerSprite:Spritemap = new Spritemap(Assets.SPRITE_SWORDGUY, 48, 32);
 		
 		public function Player()
 		{	
