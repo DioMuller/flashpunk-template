@@ -5,6 +5,7 @@ package
 	import net.flashpunk.Engine;
 	import net.flashpunk.FP;
 	import fplib.maping.OgmoMap;
+	import fplib.math.Units;
 	import test.Assets;
 	
 	/**
@@ -16,6 +17,8 @@ package
 		
 		public function Main():void 
 		{
+			Units.PPM = 32;
+			
 			super(800, 600, 60, false);
 			FP.world = new OgmoMap(
 						Assets.LEVEL_01,

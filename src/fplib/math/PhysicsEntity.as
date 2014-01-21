@@ -16,10 +16,6 @@ package fplib.math
 		 */
 		public var momentum : Vector2D;
 		/**
-		 * Gravity on the body.
-		 */
-		public var gravity : Vector2D;
-		/**
 		 * Constant forces on the body.
 		 */
 		public var constantForces : Dictionary;
@@ -66,7 +62,6 @@ package fplib.math
 			constantForces = new Dictionary();
 			
 			momentum = Vector2D.ZERO;
-			gravity = Vector2D.ZERO;
 			
 			friction = 1;
 			mass = 1;
@@ -103,12 +98,12 @@ package fplib.math
 			}
 			//} endregion Calculate Forces
 			
-			var acceleration : Vector2D = Vector2D.add( Vector2D.divide( forces, mass ), gravity );
+			var acceleration : Vector2D = Vector2D.add( Vector2D.divide( forces, mass ), Units.gravity );
 			var accelSecs : Vector2D = Vector2D.multiply( acceleration, secs );
 			
 			momentum = Vector2D.add( momentum, Vector2D.add( accelSecs, instantForces ) );
 			momentum = Vector2D.multiply( momentum, friction );
-			position = Vector2D.add( position, Vector2D.multiply( Vector2D.add( momentum, Vector2D.divide( accelSecs, 2 ) ), secs ));
+			position = Vector2D.add( position, Units.MetersToPixels(Vector2D.multiply( Vector2D.add( momentum, Vector2D.divide( accelSecs, 2 ) ), secs )));
 			
 			if ( rotate )
 			{

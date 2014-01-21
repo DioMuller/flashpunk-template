@@ -65,7 +65,7 @@ package test
 			if (Input.pressed("Jump") )
 			{
 				if ( physicsParent.onGround ) 
-					physicsParent.forces.push(new Vector2D(0, -2 * speed));
+					physicsParent.forces.push(new Vector2D(0, -10));
 			}
 		}
 	}
