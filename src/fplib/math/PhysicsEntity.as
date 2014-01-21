@@ -38,6 +38,11 @@ package fplib.math
 		//{ region Methods
 		override public function update():void 
 		{
+			var onGround : Boolean = collideTypes("solid", position.X, position.Y + 1) && !collideTypes("solid", position.X, position.Y);
+			
+			// TODO: Consider Negative and X Gravity.
+			if ( onGround ) momentum.Y = 0;
+			
 			var forces : Vector2D = Vector2D.ZERO;
 			var instantForces : Vector2D = Vector2D.ZERO;
 			var secs : Number = FP.elapsed;
