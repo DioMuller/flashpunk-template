@@ -32,6 +32,7 @@ package fplib.math
 			gravity = Vector2D.ZERO;
 			
 			friction = 1;
+			mass = 1;
 		}
 		//} endregion Constructor
 		
