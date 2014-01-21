@@ -26,8 +26,8 @@ package test
 			animation.add("stand", [0, 1, 2, 3, 4, 5], 20, true);
 			animation.add("run", [6, 7, 8, 9, 10, 11], 20, true);
 			
-			gravity = new Vector2D(0, 100);
-			mass = 5;
+			gravity = new Vector2D(0, 200);
+			mass = 1;
 			friction = 0.99;
 			
 			// TODO: Put this into the GameEntity.

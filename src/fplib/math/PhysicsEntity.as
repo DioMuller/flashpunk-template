@@ -11,14 +11,51 @@ package fplib.math
 	public class PhysicsEntity extends GameEntity
 	{
 		//{ region Attributes
+		/**
+		 * Body momentum.
+		 */
 		public var momentum : Vector2D;
+		/**
+		 * Gravity on the body.
+		 */
 		public var gravity : Vector2D;
+		/**
+		 * Constant forces on the body.
+		 */
 		public var constantForces : Dictionary;
+		/**
+		 * Instant forces on the body.
+		 */
 		public var forces : Vector.<Vector2D>;
+		/**
+		 * Body mass.
+		 */
 		public var mass : Number;
+		/**
+		 * Do physics affect body rotation?
+		 */
 		public var rotate : Boolean;
+		/**
+		 * Air and ground friction on the body.
+		 */
 		public var friction : Number;
+		
+		/**
+		 * Is entity on ground?
+		 */
+		private var _onGround : Boolean;
 		//} endregion Attributes
+		
+		//{ region Properties
+		/**
+		 * Is entity on ground?
+		 */
+		public function get onGround() : Boolean
+		{
+			return _onGround;
+		}
+		//} endregion Properties
+		
 		
 		//{ region Constructor
 		public function PhysicsEntity( x : Number, y : Number ) 
@@ -37,9 +74,12 @@ package fplib.math
 		//} endregion Constructor
 		
 		//{ region Methods
+		/**
+		 * Updates, considering physics.
+		 */
 		override public function update():void 
 		{
-			var onGround : Boolean = collideTypes("solid", position.X, position.Y + 1) && !collideTypes("solid", position.X, position.Y);
+			_onGround = collideTypes("solid", position.X, position.Y + 1) && !collideTypes("solid", position.X, position.Y);
 			
 			// TODO: Consider Negative and X Gravity.
 			if ( onGround ) momentum.Y = 0;
@@ -66,9 +106,9 @@ package fplib.math
 			var acceleration : Vector2D = Vector2D.add( Vector2D.divide( forces, mass ), gravity );
 			var accelSecs : Vector2D = Vector2D.multiply( acceleration, secs );
 			
-			position = Vector2D.add( position, Vector2D.multiply( Vector2D.add( momentum, Vector2D.divide( accelSecs, 2 ) ), secs ));
 			momentum = Vector2D.add( momentum, Vector2D.add( accelSecs, instantForces ) );
 			momentum = Vector2D.multiply( momentum, friction );
+			position = Vector2D.add( position, Vector2D.multiply( Vector2D.add( momentum, Vector2D.divide( accelSecs, 2 ) ), secs ));
 			
 			if ( rotate )
 			{

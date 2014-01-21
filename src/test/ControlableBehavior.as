@@ -1,6 +1,9 @@
 package test 
 {
 	import fplib.base.Behavior;
+	import fplib.math.PhysicsBehavior;
+	import fplib.math.Vector2D;
+	import net.flashpunk.graphics.Image;
 	import net.flashpunk.utils.Input;
 	import net.flashpunk.utils.Key;
 	import net.flashpunk.FP;
@@ -9,7 +12,7 @@ package test
 	 * ...
 	 * @author Diogo Muller
 	 */
-	public class ControlableBehavior extends Behavior
+	public class ControlableBehavior extends PhysicsBehavior
 	{
 		public var speed:Number = 150;
 			
@@ -27,13 +30,24 @@ package test
 		{
 			var moving:Boolean = false;
 			
-			if (Input.check("Back")) { parent.position.X -= (speed * FP.elapsed); moving = true; }
-			if (Input.check("Front")) { parent.position.X += (speed * FP.elapsed); moving = true; }
-			if (Input.check("Up")) { parent.position.Y -= (speed * FP.elapsed); moving = true; }
-			if (Input.check("Down")) { parent.position.Y += (speed * FP.elapsed); moving = true; }
+			if (Input.check("Back")) 
+			{ 
+				parent.position.X -= (speed * FP.elapsed); 
+				moving = true; 
+				Image(parent.graphic).flipped = true;				
+			}
+			if (Input.check("Front")) 
+			{ 
+				parent.position.X += (speed * FP.elapsed); 
+				moving = true; 
+				Image(parent.graphic).flipped = false;
+			}
+			
+			//if (Input.check("Up")) { parent.position.Y -= (speed * FP.elapsed); moving = true; }
+			//if (Input.check("Down")) { parent.position.Y += (speed * FP.elapsed); moving = true; }
 			
 			
-			if ( moving )
+			if ( moving && physicsParent.onGround )
 			{
 				parent.animation.play("run");
 			}
@@ -47,6 +61,12 @@ package test
 				shoot.play();
 			}
 			*/
+			
+			if (Input.pressed("Jump") )
+			{
+				if ( physicsParent.onGround ) 
+					physicsParent.forces.push(new Vector2D(0, -2 * speed));
+			}
 		}
 	}
 
