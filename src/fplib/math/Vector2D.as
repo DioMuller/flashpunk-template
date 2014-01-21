@@ -9,6 +9,11 @@ package fplib.math
 	 */
 	public class Vector2D 
 	{
+		//{ region Constants
+		public static const ZERO : Vector2D = new Vector2D(0, 0);
+		public static const ONE : Vector2D = new Vector2D(1, 1);
+		//} region Constants
+		
 		//{ region Attrubutes	
 		private var _x : Number;
 		private var _y : Number;

@@ -35,7 +35,12 @@ package fplib.base
 		/**
 		 * Method to be called each frame by parent. 
 		 */
-		public function update() : void { }		
+		public function update() : void { }	
+		
+		/**
+		 * Method to be called on rendering by parent. 
+		 */
+		public function render() : void { }	
 		//} endregion Methods
 	}
 

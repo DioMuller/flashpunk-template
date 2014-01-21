@@ -87,8 +87,10 @@ package fplib.maping
 			add(_mapGridEntity);
 			
 			// Load main tileset layer
+			var x : XML;
+			
 			_mainTileLayer = new Tilemap( mainTileSetAsset, _mapWidth, _mapHeight, _tileSize, _tileSize);
-			for each( var x : XML in xmlData["MainLayer"]["tile"] )
+			for each( x in xmlData["MainLayer"]["tile"] )
 			{
 				_mainTileLayer.setTile( int( x["@x"] ), int( x["@y"]), int( x["@id"] ) );
 			}
@@ -98,7 +100,7 @@ package fplib.maping
 			
 			// Load secondary tileset layer
 			_secondaryTileLayer = new Tilemap( secondaryTileSetAsset, _mapWidth, _mapHeight, _tileSize, _tileSize);
-			for each( var x : XML in xmlData["SecondaryLayer"]["tile"] )
+			for each( x in xmlData["SecondaryLayer"]["tile"] )
 			{
 				_secondaryTileLayer.setTile( int( x["@x"] ), int( x["@y"]), int( x["@id"] ) );
 			}

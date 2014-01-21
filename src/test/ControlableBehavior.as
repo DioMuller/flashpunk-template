@@ -13,7 +13,7 @@ package test
 	{
 		public var speed:Number = 150;
 			
-		public function ControlableBehavior() 
+		public function ControlableBehavior()
 		{
 			Input.define("Jump", Key.SPACE, Key.Z, Key.N);
 			Input.define("Shoot", Key.CONTROL, Key.X, Key.M);
@@ -27,20 +27,21 @@ package test
 		{
 			var moving:Boolean = false;
 			
-			if (Input.check("Back")) { parent.position.add(-speed * FP.elapsed, 0); moving = true; }
-			if (Input.check("Front")) { parent.position.add(speed * FP.elapsed, 0);; moving = true; }
-			if (Input.check("Up")) { parent.position.add(0, -speed * FP.elapsed); moving = true; }
-			if (Input.check("Down")) { parent.position.add(0, speed * FP.elapsed); moving = true; }
+			if (Input.check("Back")) { parent.position.X -= (speed * FP.elapsed); moving = true; }
+			if (Input.check("Front")) { parent.position.X += (speed * FP.elapsed); moving = true; }
+			if (Input.check("Up")) { parent.position.Y -= (speed * FP.elapsed); moving = true; }
+			if (Input.check("Down")) { parent.position.Y += (speed * FP.elapsed); moving = true; }
 			
-			/*
+			
 			if ( moving )
 			{
-				playerSprite.play("run");
+				parent.animation.play("run");
 			}
 			else
 			{
-				playerSprite.play("stand");
+				parent.animation.play("stand");
 			}
+			/*
 			if (Input.pressed("Shoot") )
 			{
 				shoot.play();

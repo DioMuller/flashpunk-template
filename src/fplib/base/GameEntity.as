@@ -2,6 +2,7 @@ package fplib.base
 {
 	import fplib.math.Vector2D;
 	import net.flashpunk.Entity;
+	import net.flashpunk.graphics.Spritemap;
 	/**
 	 * Represents an Entity with Behaviors.
 	 * @author Diogo Muller
@@ -13,6 +14,11 @@ package fplib.base
 		 * Current position.
 		 */
 		public var position : Vector2D;
+		
+		/**
+		 * Entity animation.
+		 */
+		public var animation : Spritemap;
 		//} endregion Public Attributes
 		
 		//{ region Attributes
@@ -44,8 +50,7 @@ package fplib.base
 			/* Since I can't hide x and y, I'll update them or position if the other was changed. */
 			if ( position.HasChanged )
 			{
-				x = position.X;
-				y = position.Y;
+				moveTo( position.X, position.Y, "solid", true );
 			}
 			else
 			{
@@ -60,6 +65,19 @@ package fplib.base
 		}
 		
 		/**
+		 * Function called on each rendering frame.
+		 */
+		override public function render():void 
+		{
+			for each( var b : Behavior in _behaviors )
+			{
+				b.render();
+			}
+			
+			super.render()
+		}
+		
+		/**
 		 * Adds behavior to the Entity.
 		 * @param	b Behavior to be added.
 		 */
@@ -68,8 +86,19 @@ package fplib.base
 			b.parent = this;
 			_behaviors.push(b);
 		}
+		
 		//} endregion Methods
 		
+		//{ region Overrides
+		override public function moveBy(x:Number, y:Number, solidType:Object = null, sweep:Boolean = false):void 
+		{
+			super.moveBy(x, y, solidType, sweep);
+			
+			position.X = this.x;
+			position.Y = this.y;
+			position.update();
+		}
+		//} endregion Overrides
 	}
 
 }
