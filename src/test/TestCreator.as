@@ -21,6 +21,11 @@ package test
 				return new Player();
 			}
 			
+			if ( type == "Enemy" )
+			{
+				return new Enemy();
+			}
+			
 			return null;
 		}
 		

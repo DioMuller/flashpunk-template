@@ -37,6 +37,11 @@ package fplib.math
 		public var friction : Number;
 		
 		/**
+		 * Entity maximum speed.
+		 */
+		public var maximumSpeed : Number;
+		
+		/**
 		 * Is entity on ground?
 		 */
 		private var _onGround : Boolean;

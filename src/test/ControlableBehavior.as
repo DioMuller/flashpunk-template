@@ -3,6 +3,7 @@ package test
 	import fplib.base.Behavior;
 	import fplib.math.PhysicsBehavior;
 	import fplib.math.Vector2D;
+	import fplib.math.Units;
 	import net.flashpunk.graphics.Image;
 	import net.flashpunk.utils.Input;
 	import net.flashpunk.utils.Key;
@@ -14,8 +15,6 @@ package test
 	 */
 	public class ControlableBehavior extends PhysicsBehavior
 	{
-		public var speed:Number = 150;
-			
 		public function ControlableBehavior()
 		{
 			Input.define("Jump", Key.SPACE, Key.Z, Key.N);
@@ -32,13 +31,13 @@ package test
 			
 			if (Input.check("Back")) 
 			{ 
-				parent.position.X -= (speed * FP.elapsed); 
+				parent.position.X -= Units.PPM * (physicsParent.maximumSpeed * FP.elapsed); 
 				moving = true; 
 				Image(parent.graphic).flipped = true;				
 			}
 			if (Input.check("Front")) 
 			{ 
-				parent.position.X += (speed * FP.elapsed); 
+				parent.position.X += Units.PPM * (physicsParent.maximumSpeed * FP.elapsed); 
 				moving = true; 
 				Image(parent.graphic).flipped = false;
 			}
@@ -62,10 +61,10 @@ package test
 			}
 			*/
 			
-			if (Input.pressed("Jump") )
+			if (Input.check("Jump") )
 			{
 				if ( physicsParent.onGround ) 
-					physicsParent.forces.push(new Vector2D(0, -10));
+					physicsParent.forces.push(new Vector2D(0, -(physicsParent.maximumSpeed / 3) ));
 			}
 		}
 	}

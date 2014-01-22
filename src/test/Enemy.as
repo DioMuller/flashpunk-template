@@ -1,6 +1,8 @@
 package test 
 {
 	import fplib.base.GameEntity;
+	import fplib.math.PhysicsEntity;
+	import fplib.math.steering.Seek;
 	import fplib.math.Vector2D;
 	import net.flashpunk.Entity;
 	import net.flashpunk.graphics.Image;
@@ -9,18 +11,22 @@ package test
 	 * ...
 	 * @author Diogo Muller
 	 */
-	public class Enemy extends GameEntity
-	{
-		[Embed(source = "../../assets/sample-sprite.png")] private const ENEMY : Class;
-		
+	public class Enemy extends PhysicsEntity
+	{		
 		public function Enemy() 
 		{
-			graphic = new Image(ENEMY);
+			super(100, 100);
 			
-			position = new Vector2D(100, 100);
+			graphic = new Image(Assets.SPRITE_SAMPLE);
 			
-			setHitbox(10, 10);
+			mass = 0.1;
+			friction = 1;
+			maximumSpeed = 5;
+			
+			setHitbox(42, 21);
 			type = "enemy";
+			
+			addBehavior(new Seek());
 		}
 		
 	}

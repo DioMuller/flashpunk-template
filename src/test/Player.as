@@ -27,7 +27,8 @@ package test
 			animation.add("run", [6, 7, 8, 9, 10, 11], 20, true);
 			
 			mass = 1;
-			friction = 0.99;
+			friction = 1;
+			maximumSpeed = 15;
 			
 			// TODO: Put this into the GameEntity.
 			graphic = animation;
@@ -45,6 +46,8 @@ package test
 			
 			FP.screen.scaleX = 1.5;
 			FP.screen.scaleY = 1.5;
+			
+			type = "player";
 			
 			super.update();
 		}
